@@ -1,0 +1,17 @@
+$(document).ready( function(){
+	sesCookieCheck();
+});
+/* ◆訪問チェック ------------------------------ */
+function sesCookieCheck(){
+	var checkCookie = document.cookie;
+	if(checkCookie.match("XXX")){
+  		//console.log("2nd visit")
+		$("body").addClass("vst");
+	}else{
+  		var domain = document.domain;
+  		var visitorCookie = 'visitorCookie="XXX"; domain='+domain+'; path="/";';
+  		document.cookie = visitorCookie;
+  		//console.log("fst visit")
+		$("body").addClass("fst");
+	}
+}

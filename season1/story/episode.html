@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="description" content="「痛いのは嫌なので防御力に極振りしたいと思います。」 TVアニメ続編制作決定！ シリーズ累計70万部突破、1億PV突破の人気作。ステータスポイントをすべて防御力に……!?最強初心者メイプルのノンストレスな大冒険、ここに開幕！" />
+<title>STORY - EPISODE | TVアニメ「痛いのは嫌なので防御力に極振りしたいと思います。」公式サイト</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicon/icon -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" type="image/png" href="../apple-touch-icon-180x180.png">
+<!-- ogp -->
+<meta property="og:title" content="STORY - EPISODE | TVアニメ「痛いのは嫌なので防御力に極振りしたいと思います。」公式サイト" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bofuri.jp/season1/story/episode.html" />
+<meta property="og:image" content="https://bofuri.jp/season1/og-image.jpg" />
+<meta property="og:site_name" content="TVアニメ「痛いのは嫌なので防御力に極振りしたいと思います。」公式サイト" />
+<meta property="og:description" content="「痛いのは嫌なので防御力に極振りしたいと思います。」 TVアニメ続編制作決定！ シリーズ累計70万部突破、1億PV突破の人気作。ステータスポイントをすべて防御力に……!?最強初心者メイプルのノンストレスな大冒険、ここに開幕！" />
+<meta name="twitter:card" content="summary" />
+<!-- css/js -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../lib/bootstrap.min.css">
+<script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../lib/animate.css" />
+<script type="text/javascript" src="../lib/lity.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../lib/lity.min.css" media="all" />
+
+<script type="text/javascript" src="../lib/jquery.inview.js"></script>
+
+<script type="text/javascript" src="../lib/slick/slick.js"></script>
+<link rel="stylesheet" type="text/css" href="../lib/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="../lib/slick/slick-theme.css">
+
+<link rel="stylesheet" href="https://use.typekit.net/sme5oai.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:900&display=swap&subset=japanese" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp.min.css">
+
+<link rel="stylesheet" type="text/css" href="../css/common.css@v=1210.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css@v=1005s1a.css" />
+<script type="text/javascript" src="../js/common.js@v=0101"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145011510-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-145011510-1');
+</script>
+<script>
+$(document).ready( function(){
+	pllxEyecatch(".ep-pllx-eyecatch div",".cont-ep-pllx-eyecatch");
+});
+</script>
+<script>
+const ww = window.innerWidth;
+var max_ep = 0;
+var crt_ep = 12;
+var crt_max_ep = crt_ep;
+$(document).ready( function(){
+	max_ep = $('#EPData .episode-data').length;
+	var anc = location.hash;
+	//console.log(anc);
+	if (anc == "#EP1"){chgEp(1);
+	}else if (anc == "#EP2"){chgEp(2);
+	}else if (anc == "#EP3"){chgEp(3);
+	}else if (anc == "#EP4"){chgEp(4);
+	}else if (anc == "#EP5"){chgEp(5);
+	}else if (anc == "#EP6"){chgEp(6);
+	}else if (anc == "#EP7"){chgEp(7);
+	}else if (anc == "#EP8"){chgEp(8);
+	}else if (anc == "#EP9"){chgEp(9);
+	}else if (anc == "#EP10"){chgEp(10);
+	}else if (anc == "#EP11"){chgEp(11);
+	}else if (anc == "#EP12"){chgEp(12);
+	}else{chgEp(crt_ep);
+	}
+});
+function chgEp(num){
+	crt_ep = num;
+	$('#EPCont').attr('data-episode',"ep" + num);
+	//navi
+	$('#EPNavi ul li').removeClass("crt");
+	$('#EPNavi ul li').removeClass("cs");
+	//$('#EPNavi ul li:eq('+(max_ep-num)+')').addClass("crt");
+	$($('#EPNavi ul li').get().reverse()).each(function(ind){
+	  //処理
+	  if(num == ind){
+	  	console.log(ind);
+	  	$(this).addClass("crt");
+	  }
+	  if(ind > crt_max_ep){
+	  	$(this).addClass("cs");
+	  }
+	});
+	//$('.global-sub-navi li').removeClass("crt");
+	//$('.global-sub-navi li:eq('+(num-1)+')').addClass("crt");
+
+	//for sp
+	var offset_nv = $('#EPNavi ul li.crt').position().left;
+	var w_nv = $('#EPNavi ul li.crt').outerWidth();
+	var scrl_nv =  (ww / 2) - (w_nv/2) - offset_nv;
+	$('#EPNavi .episode-navi').animate({scrollLeft: scrl_nv * -1} , 500);
+	//console.log( offset_nv + "/" +  w_nv + "/" +  scrl_nv);
+	//cursor
+	$('#EpisodeCsrL').removeClass("off");
+	$('#EpisodeCsrR').removeClass("off");
+	if( num == 1 ){$('#EpisodeCsrR').addClass("off"); }
+	if( num == max_ep ){$('#EpisodeCsrL').addClass("off"); }
+	//data
+	$('#EPData .episode-data').removeClass("crt");
+	$('.cont-ep-pllx-eyecatch').hide();
+	setTimeout(function(){
+		$(window).scrollTop(0);
+	}, 50);
+	//inview
+	setTimeout(function(){
+		//data
+		$('#EPData .episode-data:eq('+(num-1)+')').addClass("crt");
+		//parallax
+		$('.cont-ep-pllx-eyecatch .px-image').attr('src',"../assets/episode/"+num+"/px.jpg");
+		$('.cont-ep-pllx-eyecatch').show();
+	}, 300);
+}
+function movEp(num){
+	var vc = crt_ep + num;
+	if( vc < 1 ){ vc = 1 }
+	if( vc > max_ep ){ vc = max_ep }
+	//console.log(vc);
+	chgEp(vc);
+}
+</script>
+</head>
+<body id="Page_Story" class="sub-page">
+<div id="Background" class="part-background lo-part">
+</div><!-- /.part-background -->
+<header class="part-header lo-part">
+<div class="cont-global-header lo-cont">
+<div class="title-en"><img src="../images/common-header-title-en.svg"></div>
+<div class="logo"><a href="../index.html"><img src="../images/common-header-logo.png" alt="痛いのは嫌なので防御力に極振りしたいと思います。"></a></div>
+</div><!-- /.cont-global-header -->
+<div class="cont-global-navi lo-cont">
+<nav class="global-navi">
+<ul>
+<li><a class="flw-2" href="../news/index.html"><span>NEWS</span></a></li>
+<li class="crt"><a class="flw-2" href="index.html"><span>STORY</span></a><ul class="global-sub-navi">
+	<li class=""><a class="flw-2" href="index.html"><span>INTRODUCTION</span></a></li>
+	<li class="crt"><a class="flw-2" href="episode.html"><span>EPISODE</span></a></li>
+</ul></li>
+<li><a class="flw-2" href="../staffcast/index.html"><span>STAFF / CAST</span></a></li>
+<li><a class="flw-2" href="../character/index.html"><span>CHARACTER</span></a></li>
+<li><a class="flw-2" href="../onair/index.html"><span>ON AIR</span></a></li>
+<li><a class="flw-2" href="../movie/index.html"><span>MOVIE</span></a></li>
+<li><a class="flw-2" href="../music/index.html"><span>MUSIC</span></a></li>
+<li><a class="flw-2" href="../bluray/index.html"><span>Blu-ray&amp;DVD</span></a></li>
+<li><a class="flw-2" href="../books/index.html"><span>BOOKS</span></a></li>
+<li><a class="flw-2" href="../special/index.html"><span>SPECIAL</span></a></li>
+<li><a class="flw-2" href="https://twitter.com/bofuri_anime" target="_blank" rel="noopener noreferrer"><span>Official Twitter <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="13px" viewBox="0 0 250 203.18"><title>ic-twitter</title><path d="M78.62,203.18C173,203.18,224.56,125,224.56,57.24q0-3.33-.15-6.63A104.24,104.24,0,0,0,250,24.05a102.11,102.11,0,0,1-29.46,8.08A51.52,51.52,0,0,0,243.1,3.76a103.15,103.15,0,0,1-32.57,12.45A51.34,51.34,0,0,0,123.12,63,145.59,145.59,0,0,1,17.4,9.39,51.33,51.33,0,0,0,33.28,77.87a50.87,50.87,0,0,1-23.23-6.42c0,.22,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.29,51.42,51.42,0,0,1-23.17.88,51.34,51.34,0,0,0,47.92,35.62,102.91,102.91,0,0,1-63.7,22A105.19,105.19,0,0,1,0,180.14a145.17,145.17,0,0,0,78.62,23"/></svg></span></a></li>
+</ul>
+</nav>
+<div class="global-navi-banner">
+<div class=""><a href="../../index.html" class=""><picture>
+  <source media="(min-width: 768px)" srcset="../images/common-banner-season2.png">
+  <source media="(max-width: 767px)" srcset="../images/common-banner-season2-sp.png">
+  <img src="../images/common-banner-season2.png" alt="痛いのは嫌なので防御力に極振りしたいと思います。2">
+</picture></a></div>
+</div>
+<nav class="global-navi-share">
+<ul>
+<li><div class="share-btn"><a class="flw-4" href="javascript:socShare('tw');"><img src="../images/ic-share-twitter.svg" alt="twitter"></a></div></li>
+<li><div class="share-btn"><a class="flw-4" href="javascript:socShare('fb');"><img src="../images/ic-share-facebook.svg" alt="facebook"></a></div></li>
+<li><div class="share-btn"><a class="flw-4" href="https://timeline.line.me/social-plugin/share?url=https%3A%2F%2Fbofuri.jp%2F" target="_blank" rel="noopener noreferrer"><img src="../images/ic-share-line.svg" alt="facebook"></a></div></li>
+</ul>
+</nav>
+</div><!-- /.cont-global-navi -->
+<div class="cont-sp-btn lo-cont">
+<div class="sp-navi-open on"><a href="javascript:spMenuOpen();"><img src="../images/common-sp-open.png" alt="OPEN" ></a></div>
+<div class="sp-navi-close off"><a href="javascript:spMenuClose();"><img src="../images/common-sp-close.png" alt="CLOSE" ></a></div>
+</div><!-- /.cont-sp-btn -->
+</header><!-- /.part-header -->
+<div class="part-body lo-part">
+<div class="part-body-upper lo-part">
+
+<div class="cont-ep-pllx-eyecatch">
+<div class="inview iv-img">
+<div class="ep-pllx-eyecatch">
+<div><img src="../assets/episode/1/px.jpg" class="px-image" ></div>
+</div>
+</div>
+</div><!-- /.cont-ep-pllx-eyecatch -->
+
+<div class="cont-sub-page-label lo-cont">
+<h2 class="page-label"><span>STORY</span></h2>
+</div><!-- /.cont-sub-page-title -->
+
+</div><!-- /.part-body-upper-->
+<div class="part-body-middle lo-part">
+
+
+<article id="" class="cont-sub-atc lo-cont">
+<h3 class="atc-title"><span class="inview">EPISODE</span></h3>
+<section class="cont-sub-sct lo-cont">
+<div id="EPCont" class="lo-cont" data-episode="">
+
+<div id="EPNavi" class="cont-episode-navi lo-cont">
+<nav class="episode-navi">
+<ul>
+<li class=""><a class="flw-1" href="javascript:chgEp(12);"><span>#12</span></a></li>
+<li class=""><a class="flw-1" href="javascript:chgEp(11);"><span>#11</span></a></li>
+<li class=""><a class="flw-1" href="javascript:chgEp(10);"><span>#10</span></a></li>
+<li class=""><a class="flw-1" href="javascript:chgEp(9);"><span>#9</span></a></li>
+<li class=""><a class="flw-1" href="javascript:chgEp(8);"><span>#8</span></a></li>
+<li class=""><a class="flw-1" href="javascript:chgEp(7);"><span>#7</span></a></li>
+<li class=""><a class="flw-1" href="javascript:chgEp(6);"><span>#6</span></a></li>
+<li class=""><a class="flw-1" href="javascript:chgEp(5);"><span>#5</span></a></li>
+<li class=""><a class="flw-1" href="javascript:chgEp(4);"><span>#4</span></a></li>
+<li class=""><a class="flw-1" href="javascript:chgEp(3);"><span>#3</span></a></li>
+<li class=""><a class="flw-1" href="javascript:chgEp(2);"><span>#2</span></a></li>
+<li class=""><a class="flw-1" href="javascript:chgEp(1);"><span>#1</span></a></li>
+<li class=""><a class="flw-1" href="index.html"><span>INTRODUCTION</span></a></li>
+</ul>
+</nav>
+</div><!-- /.cont-episode-navi -->
+<div id="EPData" class="cont-episode-data ep lo-cont">
+
+<div class="episode-data" id="EP1">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第一話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化と初戦闘<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">友人の理沙に誘われ、最新ゲームであるVRMMO『NewWorld Online』をはじめることにした楓。自身のキャラ名をメイプルとし、ダメージを受けるのは嫌だからと全ステータスポイントを防御力に極振り!　力もなければ走りも遅い、敵の攻撃も避けられない――そんなありえないシチュエーションを逆手に取って、次々とレアスキルをゲット!　防御力特化の新米冒険者・メイプルの物語が、いま幕を開ける!</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/1/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/1/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/1/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/1/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/1/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/1/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:志茂文彦
+絵コンテ:湊 未來
+演出:伊部勇志
+作画監督:水﨑健太、青木慎平、古谷梨絵、前嶋弘史、寿 夢龍 </p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<div class="episode-data" id="EP2">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第二話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化とお友達<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">毒竜を倒し、レアな武具とスキルを手に入れたメイプル。防御力がさらに高まり、持っていたスキルも強化。意気揚々と最初のイベント、プレイヤー同士のバトルロイヤルに挑む。そして、楓を誘った張本人の理沙も、サリーとしてついにゲームに参加することになり……。</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/2/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/2/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/2/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/2/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/2/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/2/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:志茂文彦
+絵コンテ:細田直人
+演出:丸山由太
+作画監督:古谷梨絵、船越麻友美、寿 夢龍</p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<div class="episode-data" id="EP3">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第三話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化と二層攻略<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">カフェで出会った上級者プレイヤーのドラグ、ドレッドに教えてもらい、サリーと共にさらなるレアスキルの習得に向かうメイプル。しかし、思わぬところでサリーの弱点が露呈してしまう。クエストをこなし、レベルとスキルを上げながら、メイプルたちは次なる第二階層へと向かう。</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/3/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/3/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/3/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/3/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/3/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/3/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:志茂文彦
+絵コンテ・演出:田村正文
+作画監督:井上美香、今田 茜、上西麻耶、原口 渉、久松沙紀、船越麻友美</p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<div class="episode-data" id="EP4">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第四話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化と<br>第二回イベント<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">いよいよ始まった第二回イベント。イズ謹製の新装備を手に、銀のメダルを求めてフィールドを探索するメイプル。サリーと共に向かった雪山の山頂で、顔見知りの冒険者のクロムと邂逅。しかし、その先にはイベントボスモンスターが待ち構えていた。氷を自在に操る巨大な怪鳥がメイプルたちに襲い掛かる！</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/4/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/4/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/4/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/4/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/4/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/4/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:永井真吾
+絵コンテ:米田 紘
+演出:福多 潤
+作画監督:前嶋弘史、水﨑健太、金 正男、原口 渉、森 悦史、青木慎平、福地和浩</p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<div class="episode-data" id="EP5">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第五話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化と戦利品<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">突如、和装のプレイヤー・カスミに勝負を挑まれたメイプルとサリー。しかしメイプルの引き起こしたトラブルで、３人とも地下ダンジョンへと飲み込まれてしまう。さらに呪いのアイテムで、一緒に行動しなければならない制約を受けてしまったため、一時休戦。協力してダンジョンからの脱出を試みるのだが……。</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/5/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/5/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/5/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/5/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/5/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/5/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:永井真吾
+絵コンテ・演出:ほりうちゆうや
+作画監督:古谷梨絵、青木慎平、松井京介、寿 夢龍、水﨑健太、船越麻友美、久松沙紀</p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<div class="episode-data" id="EP6">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第六話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化と新戦力<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">新たにゲームに実装されたギルドを作ろうと、イズやクロム、前回のイベントで知り合ったカスミやカナデを勧誘するメイプル。次なるイベントに向け、もう少しメンバーが欲しいと思うメイプルは、双子のプレイヤー・ユイとマイに出会う。ところが二人とも、攻撃力にステータスを極振りしてしまい、まともに戦うことのできない初心者だった。</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/6/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/6/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/6/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/6/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/6/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/6/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:志茂文彦
+絵コンテ:ワタナベシンイチ
+演出:伊部勇志
+作画監督:原口 渉、寿 夢龍、前嶋弘史、水﨑健太、今田茜、船越麻友美、松井京介、木下由美子</p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<div class="episode-data" id="EP7">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第七話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化と強化<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">メイプルをマスターに置くギルド『楓の木』。ユイとマイのレベル上げに付き合って、メイプルはひたすらボスを狩り続ける。サリーたちもイベントに向けての準備に余念がない。久しぶりに一人になったメイプルは、とあるクエストに挑戦するが、思いがけない展開に。</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/7/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/7/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/7/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/7/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/7/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/7/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:志茂文彦
+絵コンテ:岩畑剛一
+演出:大沼 心、湊 未來
+作画監督:古谷梨絵、水﨑健太、青木慎平、久松沙紀、秋田英人</p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<div class="episode-data" id="EP8">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第八話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化と<br>第三回イベント<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">第三回のアイテム集めイベントに苦戦するメイプル。平和なアイテム回収と思いきや、サリーたちが心配したとおり、メイプルはまたも誰もが予期しない展開に。転移の魔法陣を抜けた先、そこに現れたのは、なんと隠しボスの悪魔！丸呑みにされてしまったメイプルは、悪魔の胃の中で溶かされていくのだが……。</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/8/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/8/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/8/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/8/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/8/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/8/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:永井真吾
+絵コンテ:ワタナベシンイチ
+演出:伊部勇志
+作画監督:古谷梨絵、寿 夢龍、大槻南雄、船越麻友美、青木慎平、水﨑健太、前嶋弘史、澤入祐樹、佐藤香織</p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<div class="episode-data" id="EP9">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第九話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化と<br>第四回イベント<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">悪魔の力に加え、超強力なスキル『機械神』も得たメイプル。とうとう始まる第四回イベントのギルド対抗戦に向け、メイプルたちは意欲を燃やす。しかし、最強プレイヤー・ペインの率いる『集う聖剣』、あるいはカリスマ力No.1のミィがギルドマスターの『炎帝ノ国』など、有力ギルドは多数。メンバー数では遠く及ばない小ギルド『楓の木』が立てた作戦は――</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/9/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/9/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/9/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/9/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/9/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/9/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:永井真吾
+絵コンテ・演出:田村正文
+作画監督:前嶋弘史、水﨑健太、上西麻耶、船越麻友美、寿 夢龍、青木慎平、吉川佳織、古谷梨絵</p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<div class="episode-data" id="EP10">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第十話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化と出撃<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">スキルや能力がバレる前に、先行逃げ切りを図るメイプルたち。少数精鋭での奇襲により、次々とオーブが集められる。だがやはりギルド対抗戦、一筋縄ではいかない。カスミの前には『炎帝ノ国』のシンが、サリーの前には『集う聖剣』のフレデリカが立ちはだかる。そして拠点を守るユイとマイたちにも、侵略者の影が近付いてくるのだった。</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/10/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/10/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/10/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/10/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/10/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/10/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:志茂文彦
+絵コンテ:ワタナベシンイチ
+演出:福多 潤
+作画監督:前嶋弘史、佐藤香織、原口 渉、寿 夢龍、水﨑健太、金 正男、髙野奈央、船越麻友美、松井京介、久松沙紀、古谷梨絵</p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<div class="episode-data" id="EP11">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第十一話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化と強敵<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">『炎帝ノ国』との闘いを優位に進めるメイプルたち。だが、その最中、ギルドマスターのミィが駆けつける。強力な炎の攻撃でメイプルを圧倒するミィ。全力で立ち向かうメイプルだったが、『炎帝ノ国』のメンバー・マルクス、ミザリーたちの足止めを受け、ミィの放った炎の檻に捕われてしまう。</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/11/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/11/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/11/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/11/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/11/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/11/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:永井真吾
+絵コンテ:岩畑剛一
+演出:ほりうちゆうや
+作画監督:前嶋弘史、原口 渉、寿 夢龍、佐藤香織、松井京介、澤入祐樹、前田 綾、井上美香、船越麻友美、大槻南雄、水﨑健太</p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<div class="episode-data" id="EP12">
+<div class="cont-860 pdh-sm lo-cont">
+<div class="ep-title">
+<p class="vol fnt-dsp"><span class="inview"><span><span>第十二話</span></span></span></p>
+<p class="name1 fnt-dsp"><span class="inview"><span><span>防御特化とつながり<span>。</span></span></span></span></p>
+</div>
+<div class="ep-story">
+<p class="ep-story-label"><span>STORY</span></p>
+<p class="fnt-13 pre mgr0b inview iv-ta">大ギルドの利点を捨て、『楓の木』に少数での奇襲を仕掛けた『集う聖剣』のペインたち。だが、そんな最強プレイヤーを迎え撃つメイプルたちも、ここまで来た以上、一歩も引くわけにはいかない。トップクラスのスキルが応酬するパーティーバトル。ペインの剣技に翻弄されるメイプルは、耐え続ける中、勝機の一瞬を狙う。</p>
+</div>
+<div class="ep-img">
+<div class="inview iv-img"><img src="../assets/episode/12/1.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/12/2.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/12/3.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/12/4.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/12/5.jpg"></div>
+<div class="inview iv-img"><img src="../assets/episode/12/6.jpg"></div>
+</div>
+<div class="ep-staff">
+<p class="ep-staff-label"><span>STAFF</span></p>
+<p class="fnt-14 fnt-12-sm pre mgr0b inview iv-ta">脚本:志茂文彦
+絵コンテ・演出:細田雅弘
+作画監督:平田和也、山吉一幸</p>
+</div>
+</div><!-- /.cont-860 -->
+</div><!-- /.episode-data -->
+
+<!-- データは下に追加 -->
+
+</div><!-- /.cont-episode-data -->
+<div class="cont-episode-cursor lo-cont">
+<div class="cont-860 pdh-sm lo-cont">
+<nav class="episode-cursor">
+<ul>
+<li id="EpisodeCsrL" class=""><a class="flw-1" href="javascript:movEp(1);"><span></span></a></li>
+<li id="EpisodeCsrR" class=""><a class="flw-1" href="javascript:movEp(-1);"><span></span></a></li>
+</ul>
+</nav>
+</div><!-- /.cont-860 -->
+</div><!-- /.cont-episode-cursor -->
+
+</div><!-- /#EPCont -->
+</section><!-- /.cont-sub-sct -->
+</article><!-- /.cont-sub-atc -->
+
+
+<article id="" class="cont-sub-atc lo-cont">
+<div class="hide-sp"><h3 class="atc-title"><span class="inview">&nbsp;</span></h3></div>
+<section class="cont-sub-sct lo-cont">
+<div class="cont-860 pdh-sm lo-cont">
+<br>
+<div class="episode-thumb-list">
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(12);"><img src="../assets/episode/12/th.jpg"></a></div>
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(11);"><img src="../assets/episode/11/th.jpg"></a></div>
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(10);"><img src="../assets/episode/10/th.jpg"></a></div>
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(9);"><img src="../assets/episode/9/th.jpg"></a></div>
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(8);"><img src="../assets/episode/8/th.jpg"></a></div>
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(7);"><img src="../assets/episode/7/th.jpg"></a></div>
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(6);"><img src="../assets/episode/6/th.jpg"></a></div>
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(5);"><img src="../assets/episode/5/th.jpg"></a></div>
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(4);"><img src="../assets/episode/4/th.jpg"></a></div>
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(3);"><img src="../assets/episode/3/th.jpg"></a></div>
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(2);"><img src="../assets/episode/2/th.jpg"></a></div>
+<div class="inview iv-img"><a class="flw-5" href="javascript:chgEp(1);"><img src="../assets/episode/1/th.jpg"></a></div>
+</div>
+</div><!-- /.cont-860 -->
+</section><!-- /.cont-sub-sct -->
+</article><!-- /.cont-sub-atc -->
+
+
+</div><!-- /.part-body-middle-->
+</div><!-- /.part-body -->
+<footer class="part-footer lo-part">
+<div class="part-footer-upper lo-part">
+<div class="upper-container">
+<div class="cont-footer-twitter lo-cont">
+<div class="twitter-widget">
+<a class="twitter-timeline" data-height="240" data-theme="dark" data-link-color="#ef3488" data-border-color="#ef3488" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/bofuri_anime?ref_src=twsrc%5Etfw">Tweets by bofuri_anime</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+</div><!-- /.cont-footer-twitter -->
+<div class="cont-footer-logo lo-cont">
+<div class="logo"><a href="../index.html"><img src="../images/common-footer-logo.png" alt="痛いのは嫌なので防御力に極振りしたいと思います。"></a></div>
+</div><!-- /.cont-footer-logo -->
+<div class="cont-footer-navi lo-cont">
+<nav class="footer-navi">
+<ul class="f-dsp exb">
+<li><a class="flw-3" href="../news/index.html"><span>NEWS</span></a></li>
+<li><a class="flw-3" href="index.html"><span>STORY</span></a></li>
+<li><a class="flw-3" href="../staffcast/index.html"><span>STAFF / CAST</span></a></li>
+<li><a class="flw-3" href="../character/index.html"><span>CHARACTER</span></a></li>
+<li><a class="flw-3" href="../onair/index.html"><span>ON AIR</span></a></li>
+<li><a class="flw-3" href="../movie/index.html"><span>MOVIE</span></a></li>
+<li><a class="flw-3" href="../music/index.html"><span>MUSIC</span></a></li>
+<li><a class="flw-3" href="../bluray/index.html"><span>Blu-ray&amp;DVD</span></a></li>
+<li><a class="flw-3" href="../books/index.html"><span>BOOKS</span></a></li>
+<li><a class="flw-3" href="../special/index.html"><span>SPECIAL</span></a></li>
+</ul>
+</nav>
+</div><!-- /.cont-footer-navi -->
+<div class="cont-footer-banner lo-cont">
+<div class="series-banner">
+<div><a class="" href="https://kadokawabooks.jp/special/itainohaiya/" target="_blank" rel="noopener noreferrer"><img src="../images/common-footer-bkofcl-banner.png" alt="痛いのは嫌なので防御力に極振りしたいと思います。"></a></div>
+<div><a class="" href="../../index.html" ><img src="../images/common-footer-season2-banner.png" alt="痛いのは嫌なので防御力に極振りしたいと思います。2"></a></div>
+</div><!-- /.series-banner -->
+</div><!-- /.cont-footer-banner -->
+</div>
+</div><!-- /.part-footer-upper-->
+<div class="part-footer-middle lo-part">
+<div class="cont-global-footer lo-cont">
+<div class="footer-credit">
+<img src="../images/common-footer-credit.png" alt="">
+</div><!-- /.footer-credit -->
+<div class="footer-sponsor">
+<div><a class="flw-3" href="https://web-ace.jp/compace/" target="_blank" rel="noopener noreferrer"><img src="../images/sponsor/bnr-comp-ace.png" alt="コンプエース" ></a></div>
+<div><a class="flw-3" href="https://comic-walker.com/contents/detail/KDCW_KS04200409010000_68/" target="_blank" rel="noopener noreferrer"><img src="../images/sponsor/bnr-comic-walker.png" alt="ComicWalker" ></a></div>
+<div><a class="flw-3" href="https://www.kadokawa.co.jp/" target="_blank" rel="noopener noreferrer"><img src="../images/sponsor/bnr-kadokawa.png" alt="KADOKAWA" ></a></div>
+<div><a class="flw-3" href="http://www.silverlink.co.jp/" target="_blank" rel="noopener noreferrer"><img src="../images/sponsor/bnr-silver-link.png" alt="SILVER LINK." ></a></div>
+</div><!-- /.footer-sponsor -->
+<div class="footer-copyrihgt"><p>&copy;2020　夕蜜柑・狐印／KADOKAWA／防振り製作委員会</p></div>
+</div><!-- /.cont-global-footer -->
+</div><!-- /.part-footer-middle-->
+</footer><!-- /.part-footer -->
+<div class="mouse-follower"><svg height="300" width="300" viewBox="0 0 300 300"><circle cx="150" cy="150" r="90" stroke-width="0"></circle></svg></div>
+<div class="mouse-follower l2"><svg height="300" width="300" viewBox="0 0 300 300"><circle cx="150" cy="150" r="90" stroke-width="0"></circle></svg></div>
+<div class="mouse-follower l3"><svg height="300" width="300" viewBox="0 0 300 300"><circle cx="150" cy="150" r="90" stroke-width="0"></circle></svg></div>
+<div class="mouse-follower l4"><svg height="300" width="300" viewBox="0 0 300 300"><circle cx="150" cy="150" r="90" stroke-width="0"></circle></svg></div>
+<div class="mouse-follower l5"><svg height="300" width="300" viewBox="0 0 300 300"><circle cx="150" cy="150" r="90" stroke-width="0"></circle></svg></div>
+</body>
+</html>

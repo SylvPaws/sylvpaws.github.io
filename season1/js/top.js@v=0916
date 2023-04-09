@@ -1,0 +1,156 @@
+
+const ww = window.innerWidth;
+const wh = window.innerHeight;
+const hw = ww / 2;
+const hh = wh / 2;
+const pm = 150; // parallax margin
+const pllx_mov_val = -1 * 0.2;
+const pllx_scrl_val = 20;
+
+$(document).on("mousemove", function(e) {
+	const mw = ( e.clientX - hw ) / hw * ( pm / 2 ); // 0.0 ~ 10.0
+	const mh = ( e.clientY - hh ) / hh * ( pm / 2 );
+	//console.log( mw, mh );
+	setTimeout(function(){
+		//$('#PllxScene .background img').css("top", mh * pllx_mov_val * .5);
+		//$('#PllxScene .background img').css("left", mw * pllx_mov_val * .5);
+		//$('#PllxScene .background-flush img').css("left", mw * pllx_mov_val * .5);
+		$('#PllxScene .background img').stop().animate({"left": (mw * pllx_mov_val * 0.5) + "px"},200);
+		$('#PllxScene .background-flush img').stop().animate({"left": (mw * pllx_mov_val * 0.5) + "px"},200);
+
+		//$('#PllxScene .chr7 img').css("top", mh * pllx_mov_val * .8);
+		//$('#PllxScene .chr7 img').css("left", mw * pllx_mov_val * 0.7);
+		$('#PllxScene .chr7 img').stop().animate({"left": (mw * pllx_mov_val * 0.7) + "px"},200);
+
+		//$('#PllxScene .chr6 img').css("top", mh * pllx_mov_val * 1.0);
+		//$('#PllxScene .chr6 img').css("left", mw * pllx_mov_val * 0.8);
+		$('#PllxScene .chr6 img').stop().animate({"left": (mw * pllx_mov_val * 0.8) + "px"},200);
+
+		//$('#PllxScene .chr5 img').css("top", mh * -pllx_mov_val * 1.2);
+		//$('#PllxScene .chr5 img').css("left", mw * pllx_mov_val * 0.9);
+		$('#PllxScene .chr5 img').stop().animate({"left": (mw * pllx_mov_val * 0.9) + "px"},200);
+
+		//$('#PllxScene .chr4 img').css("top", mh * pllx_mov_val * 1.5);
+		//$('#PllxScene .chr4 img').css("left", mw * pllx_mov_val * 1.5);
+
+		//$('#PllxScene .chr1 img').css("top", mh * pllx_mov_val * 1.6);
+		//$('#PllxScene .chr1 img').css("left", mw * pllx_mov_val * 1.6);
+		}, 200);
+});
+$(window).scroll(function(){
+     var y = $(this).scrollTop();
+		$('#PllxScene .background img').css("top", parseInt( -y / pllx_scrl_val ) * .5);
+		$('#PllxScene .background-flush img').css("top", parseInt( -y / pllx_scrl_val ) * .5);
+		$('#PllxScene .chr7 img').css("top", parseInt( -y / pllx_scrl_val ) * .8);
+		$('#PllxScene .chr6 img').css("top", parseInt( -y / pllx_scrl_val ) * 1.3);
+		$('#PllxScene .chr5 img').css("top", parseInt( -y / pllx_scrl_val ) * 1.8);
+		$('#PllxScene .chr4 img').css("top", parseInt( -y / pllx_scrl_val ) * 1.9);
+		//$('#PllxScene .chr1 img').css("top", parseInt( y / pllx_scrl_val ) * .5);
+});
+
+var jqvw;
+var jqvh;
+var visw;
+var vish;
+var vistop;
+var visdy = 0;//初期位置
+var visdl = 3000;//移動までのディレイ
+var visdt = 2000;//移動時間
+var vem = 18;
+var loaddt = 10000;
+var vy_logo_d;
+var is_loaded = false;
+$(document).ready( function(){
+	jqvw = $(window).innerWidth();
+	jqvh = $(window).innerHeight();
+	visw = $("#MainVisual").width();
+	vish = $("#MainVisual").height();
+	var vemText = $("body").css("font-size");
+	vemText = vemText.replace("px", "");
+	vem = Number(vemText);
+	//console.log("jqvw:"+jqvw +"/jqvh:"+jqvh+"/visw:"+visw+"/vish:"+vish+"/vem:"+vem);
+
+	//横長画面でのビジュアルの出現時縦位置、正常位置への移動時間を設定
+	if(vish>jqvh){
+		visdy = ((vish - jqvh)) ;
+		visdl = 5000;
+		visdt = 2000;
+	}
+	//console.log("visdy:"+visdy +"/visdt:"+visdt);
+	mainVisLoop();
+	//dbg();
+	//var lightbox = lity('#Modal_1');
+});
+$(window).load(function(){
+	is_loaded = true;
+	//console.log("window.load / is_loaded = "+is_loaded);
+});
+
+function mainVisLoop(kyd){
+	//縦位置をリセット
+	setTimeout(function(){
+	$(window).scrollTop(visdy)
+	$('body,html').animate({ scrollTop:visdy}, 0, 'easeInOutCubic')
+	//$(".visual-container").animate({top:visdy}, 0);
+	//console.log("visdy:"+visdy +"/visdt:"+visdt);
+	}, 100);
+	if( !kyd ){
+		//ロード
+		setTimeout(function(){
+			$(".loadpane-container").addClass("anm1");
+		}, 100);
+		setTimeout(function(){
+			$(".loadpane-container").addClass("anm2");
+		}, 3500);
+		setTimeout(function(){
+			$(".cont-top-loadpane").hide("");
+		}, 10000);
+	}else{
+		$(".cont-top-loadpane").hide("");
+	}
+	if( kyd == 1 ){ loaddt = 0; }
+	//表示開始
+	setTimeout(function(){
+		waitLoad();
+	}, loaddt + 100);
+}
+function waitLoad(){
+	setTimeout(function(){
+		if(is_loaded){
+			openPage();
+			//console.log("waitLoad() / is_loaded = "+is_loaded);
+		}else{
+			waitLoad();
+			//console.log("waitLoad() / is_loaded = "+is_loaded);
+		}
+	}, 500);
+}
+function openPage(){
+	//表示開始
+	setTimeout(function(){
+		$(".visual-container").addClass("anm1");
+	}, 100);
+	//移動
+	setTimeout(function(){
+		$('body,html').animate({ scrollTop:0}, visdt, 'easeInOutCubic')
+		//$(".visual-container").animate({top:0}, visdt);
+	}, visdl);
+	//移動終了
+	setTimeout(function(){
+			$('.top-page .part-header').fadeIn(1500);
+			$('.top-page .part-footer').fadeIn(1500);
+			$('.top-page .part-body-middle').fadeIn(1500);
+	}, visdl + visdt);
+	setTimeout(function(){
+		$(".visual-container").addClass("anm2");
+	}, visdl + visdt + 1000);
+}
+function dbg(){
+	$(".cont-top-loadpane").hide("");
+	openPage();
+/*
+	$('.top-page .part-header').fadeIn(1500);
+	$('.top-page .part-footer').fadeIn(1500);
+	$('.top-page .part-body-middle').fadeIn(1500);
+*/
+}
